@@ -7,6 +7,28 @@ public class MicrophoneInput
     private string device; //microphone 
     private AudioClip clipRecord = null; //stores audio clip that is filled with audio from microphone
     private int sampleWindow = 128; //audio sampling rate
+    private bool isInitialized;
+    public static float MicLoudness;
+
+    void Update()
+    {
+        MicLoudness = LevelMax();
+        Debug.Log(MicLoudness);
+    }
+    
+    void OnEnable()
+    {
+        InitializeMic();
+        isInitialized = true;
+    }
+    void OnDisable()
+    {
+        StopMic();
+    }
+    void OnDestroy()
+    {
+        StopMic();
+    }
 
     private void InitializeMic() //gets data from microphone and passes it into audio clip.
     {
@@ -16,6 +38,12 @@ public class MicrophoneInput
             clipRecord = Microphone.Start(device, true, 999, 44100); //microphone, whether it's looping, record length in seconds, sample rate of 44.1kHz
         }
     }
+
+    private void StopMic()
+    {
+        Microphone.End(device);
+    }
+
     private float LevelMax()
     {
         float levelMax = 0;
@@ -31,8 +59,23 @@ public class MicrophoneInput
                 levelMax = wavePeak;
             }
         }
-        return levelMax;
+        return levelMax; //returns maximum volume
     }
-
+    void OnApplicationFocus(bool focus)
+    {
+        if (focus)
+        {
+            if (!isInitialized)
+            {
+                InitializeMic();
+                isInitialized = true;
+            }
+        }
+        if (!focus)
+        {
+            StopMic();
+            isInitialized = false;
+        }
+    }
     
 }
