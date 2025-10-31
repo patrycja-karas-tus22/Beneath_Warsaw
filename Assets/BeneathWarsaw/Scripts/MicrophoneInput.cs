@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Windows.Speech;
 using System.Collections.Generic;
 
-public class MicrophoneInput
+public class MicrophoneInput : MonoBehaviour
 {
     private string device; //microphone 
     private AudioClip clipRecord = null; //stores audio clip that is filled with audio from microphone
@@ -35,6 +35,11 @@ public class MicrophoneInput
         if (device == null)
         {
             device = Microphone.devices[0];
+            if (Microphone.devices.Length == 0)
+            {
+                Debug.LogError("NO MICROPHONE FOUND!");
+                return;
+            }
             clipRecord = Microphone.Start(device, true, 999, 44100); //microphone, whether it's looping, record length in seconds, sample rate of 44.1kHz
         }
     }
@@ -48,13 +53,13 @@ public class MicrophoneInput
     {
         float levelMax = 0;
         float[] waveData = new float[sampleWindow]; //creates an array to store audio samples
-        int micPosition = Microphone.GetPosition(null) - (sampleWindow + 1); //gets where new data is being written, subtracts 1 to make sure recent audio is read
+        int micPosition = Microphone.GetPosition(device) - sampleWindow;
         if (micPosition < 0) return 0; //if there's not enough data yet return 0
         clipRecord.GetData(waveData, micPosition); //copies number of samples from the audio clip into the array
         for (int i = 0; i < sampleWindow; i++) //squares each sample, highest value becomes level max.
         {
             float wavePeak = waveData[i] * waveData[i];
-            if (levelMax < wavePeak)
+            if (wavePeak > levelMax)
             {
                 levelMax = wavePeak;
             }
