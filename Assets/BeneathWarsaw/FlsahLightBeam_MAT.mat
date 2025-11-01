@@ -51,12 +51,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BeamLength: 5
-    - _FresnelStrength: 2
+    - _BeamLength: 40.74
+    - _FresnelStrength: 10.3
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _AlphaColor: {r: 0, g: 0, b: 0, a: 0.69803923}
-    - _Color: {r: 1, g: 0.96237516, b: 0.36037737, a: 1}
+    - _AlphaColor: {r: 0, g: 0, b: 0, a: 0.3137255}
+    - _Color: {r: 0.97735846, g: 0.93847424, b: 0.34484154, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

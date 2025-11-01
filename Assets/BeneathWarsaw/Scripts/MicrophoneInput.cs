@@ -13,7 +13,7 @@ public class MicrophoneInput : MonoBehaviour
     void Update()
     {
         MicLoudness = LevelMax();
-        Debug.Log(MicLoudness);
+        //Debug.Log(MicLoudness);
     }
     
     void OnEnable()
