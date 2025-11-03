@@ -17,7 +17,35 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 95de6e692b14c174bbad088c86417ca2, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 52348758519808
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52351619035136
+    m_Localized: Movement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52353426780160
+    m_Localized: Accessibility
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68187780018176
+    m_Localized: Movement Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71146655969280
+    m_Localized: Turn Type
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72039480684544
+    m_Localized: Smooth Rotate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73747363524608
+    m_Localized: Snap Rotate
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
