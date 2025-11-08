@@ -15,46 +15,22 @@ MonoBehaviour:
   m_TableCollectionName: Text
   m_TableCollectionNameGuidString: 95de6e692b14c174bbad088c86417ca2
   m_Entries:
-  - m_Id: 52348758519808
-    m_Key: LANGUAGE_BUTTON
-    m_Metadata:
-      m_Items: []
-  - m_Id: 52351619035136
-    m_Key: MOVEMENT_BUTTON
-    m_Metadata:
-      m_Items: []
-  - m_Id: 52353426780160
-    m_Key: ACCESSIBILITY_BUTTON
-    m_Metadata:
-      m_Items: []
-  - m_Id: 68187780018176
-    m_Key: MOVEMENT_SPEED_BUTTON
-    m_Metadata:
-      m_Items: []
-  - m_Id: 71146655969280
-    m_Key: TURN_TYPE_BUTTON
-    m_Metadata:
-      m_Items: []
-  - m_Id: 72039480684544
-    m_Key: SMOOTH_ROTATE
-    m_Metadata:
-      m_Items: []
-  - m_Id: 73747363524608
-    m_Key: SNAP_ROTATE
-    m_Metadata:
-      m_Items: []
-  - m_Id: 90046491783168
+  - m_Id: 8714186752
     m_Key: New Entry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10995888128
+    m_Key: New Entry 1
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 7574186037511717137
+    rid: 442232565269528662
   references:
     version: 2
     RefIds:
-    - rid: 7574186037511717137
+    - rid: 442232565269528662
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1762170443444
+        m_CustomEpoch: 1762605255413

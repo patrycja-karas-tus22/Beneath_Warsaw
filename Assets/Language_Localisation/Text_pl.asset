@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: pl
-  m_SharedData: {fileID: 11400000, guid: 95de6e692b14c174bbad088c86417ca2, type: 2}
+  m_SharedData: {fileID: 0}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 442232565269528661
   m_TableData:
   - m_Id: 52348758519808
     m_Localized: "J\u0119zyk"
@@ -41,11 +42,20 @@ MonoBehaviour:
   - m_Id: 72039480684544
     m_Localized: "P\u0142ynny Obr\xF3t"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 442232565269528661
   - m_Id: 73747363524608
     m_Localized: "Skokowy Obr\xF3t"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 442232565269528661
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 442232565269528661
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 72039480684544
+        - id: 73747363524608

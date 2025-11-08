@@ -556,10 +556,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 394165803}
   m_HandleRect: {fileID: 393382482}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0
+  m_MinValue: 2
+  m_MaxValue: 6
+  m_WholeNumbers: 1
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2047,6 +2047,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1973164956}
   m_SourcePrefab: {fileID: 100100000, guid: e7781975bb95ce841b084b6e97a5f3e2, type: 3}
+--- !u!114 &457765210 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 153982007679157697, guid: e7781975bb95ce841b084b6e97a5f3e2, type: 3}
+  m_PrefabInstance: {fileID: 441087506}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1e8c997df241c1a67045eeac79b41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &461257233
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,7 +2091,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -791228.6}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &479311583
@@ -2171,6 +2182,7 @@ GameObject:
   - component: {fileID: 512487018}
   - component: {fileID: 512487017}
   - component: {fileID: 512487021}
+  - component: {fileID: 512487022}
   m_Layer: 5
   m_Name: SettingsMenuCanvas
   m_TagString: Untagged
@@ -2225,7 +2237,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512487016}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -2262,6 +2274,22 @@ RectTransform:
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &512487021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512487016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d6de8151e569c46b9c0be8fbf5fb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSlider: {fileID: 77880619}
+  dynamicMoveProvider: {fileID: 457765210}
+  smoothTurn: {fileID: 1938745645}
+  snapTurn: {fileID: 1938745646}
+--- !u!114 &512487022
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2705,7 +2733,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SMOOTH_ROTATE
+  m_text: Smooth Rotate
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5437,15 +5465,27 @@ MonoBehaviour:
   m_MultiSelect: 0
   m_Options:
     m_Options:
-    - m_Text: SMOOTH_ROTATE
+    - m_Text: Smooth Rotate
       m_Image: {fileID: 0}
       m_Color: {r: 0, g: 0, b: 0, a: 0}
-    - m_Text: SNAP_ROTATE
+    - m_Text: Snap Rotate
       m_Image: {fileID: 0}
       m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 512487021}
+        m_TargetAssemblyTypeName: MovementSettings, Assembly-CSharp
+        m_MethodName: SetTurnType
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1652558045
 MonoBehaviour:
@@ -5494,10 +5534,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1652558042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0127f4d4cb804af43b1938834f1950c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropdown: {fileID: 1652558044}
+  m_TrackedObjects: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1664206927
 GameObject:
   m_ObjectHideFlags: 0
@@ -5656,7 +5699,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1664206928}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.81333333
+  m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5904,7 +5947,6 @@ GameObject:
   - component: {fileID: 1905228562}
   - component: {fileID: 1905228564}
   - component: {fileID: 1905228563}
-  - component: {fileID: 1905228565}
   m_Layer: 5
   m_Name: Item Label
   m_TagString: Untagged
@@ -6030,46 +6072,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905228561}
   m_CullTransparentMesh: 1
---- !u!114 &1905228565
+--- !u!114 &1938745645 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6480925242510836759, guid: e7781975bb95ce841b084b6e97a5f3e2, type: 3}
+  m_PrefabInstance: {fileID: 441087506}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1905228561}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 75b29b6c6428c984a8a73ffc2d58063b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:95de6e692b14c174bbad088c86417ca2
-    m_TableEntryReference:
-      m_KeyId: 90046491783168
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1905228563}
-        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-        m_MethodName: SetText
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 2
-    RefIds: []
+--- !u!114 &1938745646 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7347985736721345035, guid: e7781975bb95ce841b084b6e97a5f3e2, type: 3}
+  m_PrefabInstance: {fileID: 441087506}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f365cf844c03449bc8973eead2c3c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1950035701
 GameObject:
   m_ObjectHideFlags: 0
@@ -6632,7 +6656,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 512487021}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetLanguage
         m_Mode: 3
@@ -6644,7 +6668,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 512487021}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetLanguage
         m_Mode: 0
