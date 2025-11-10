@@ -23,6 +23,7 @@ public class MovementSettings : MonoBehaviour
     public float currentIntensity = 0f;
     private Vignette vignette;
     private Vector3 lastPosition;
+    public bool vignetteEnabled;
     
     private void Start()
     {
@@ -37,10 +38,10 @@ public class MovementSettings : MonoBehaviour
     private void Update()
     {
         float movementThreshold = 0.001f;
-        if (Vector3.Distance(player.position, lastPosition) > movementThreshold)
-            vignette.intensity.value = maxIntensity;
+        if (Vector3.Distance(player.position, lastPosition) > movementThreshold && vignetteEnabled)
+            vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, maxIntensity, Time.deltaTime * 5f);
         else
-            vignette.intensity.value = 0f;
+            vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, currentIntensity, Time.deltaTime * 5f);
 
         lastPosition = player.position;
     }
@@ -63,8 +64,8 @@ public class MovementSettings : MonoBehaviour
         movementSlider.onValueChanged.RemoveListener(UpdateSpeed);
     }
 
-    void VignetteOn()
+    public void VignetteOn()
     {
-
+        vignetteEnabled = !vignetteEnabled;
     }
 }
