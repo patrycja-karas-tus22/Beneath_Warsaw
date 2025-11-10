@@ -10,52 +10,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Text_en
+  m_Name: Text_en 2
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: en
-  m_SharedData: {fileID: 0}
+  m_SharedData: {fileID: 11400000, guid: 95de6e692b14c174bbad088c86417ca2, type: 2}
   m_Metadata:
-    m_Items:
-    - rid: 442232565269528660
+    m_Items: []
   m_TableData:
-  - m_Id: 52348758519808
+  - m_Id: 21258170368
     m_Localized: Language
     m_Metadata:
       m_Items: []
-  - m_Id: 52351619035136
+  - m_Id: 23497928704
     m_Localized: Movement
     m_Metadata:
       m_Items: []
-  - m_Id: 52353426780160
+  - m_Id: 25272119296
     m_Localized: Accessibility
     m_Metadata:
       m_Items: []
-  - m_Id: 68187780018176
+  - m_Id: 27054698496
     m_Localized: Movement Speed
     m_Metadata:
       m_Items: []
-  - m_Id: 71146655969280
+  - m_Id: 28833083392
     m_Localized: Turn Type
     m_Metadata:
       m_Items: []
-  - m_Id: 72039480684544
+  - m_Id: 32255635456
     m_Localized: Smooth Rotate
     m_Metadata:
-      m_Items:
-      - rid: 442232565269528660
-  - m_Id: 73747363524608
+      m_Items: []
+  - m_Id: 34835132416
     m_Localized: Snap Rotate
     m_Metadata:
-      m_Items:
-      - rid: 442232565269528660
+      m_Items: []
   references:
     version: 2
-    RefIds:
-    - rid: 442232565269528660
-      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_Entries: 
-        m_SharedEntries:
-        - id: 72039480684544
-        - id: 73747363524608
+    RefIds: []

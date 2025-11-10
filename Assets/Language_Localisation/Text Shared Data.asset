@@ -15,22 +15,42 @@ MonoBehaviour:
   m_TableCollectionName: Text
   m_TableCollectionNameGuidString: 95de6e692b14c174bbad088c86417ca2
   m_Entries:
-  - m_Id: 8714186752
-    m_Key: New Entry
+  - m_Id: 21258170368
+    m_Key: LANGUAGE_KEY
     m_Metadata:
       m_Items: []
-  - m_Id: 10995888128
-    m_Key: New Entry 1
+  - m_Id: 23497928704
+    m_Key: MOVEMENT_KEY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25272119296
+    m_Key: ACCESSIBILITY_KEY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27054698496
+    m_Key: MOVEMENT_SPEED_KEY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28833083392
+    m_Key: TURN_TYPE_KEY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32255635456
+    m_Key: SMOOTH_ROTATE_KEY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34835132416
+    m_Key: SNAP_ROTATE_KEY
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 442232565269528662
+    rid: 7574186195989561423
   references:
     version: 2
     RefIds:
-    - rid: 442232565269528662
+    - rid: 7574186195989561423
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1762605255413
+        m_CustomEpoch: 1762772985284
