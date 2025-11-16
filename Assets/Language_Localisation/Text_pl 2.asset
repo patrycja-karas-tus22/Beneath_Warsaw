@@ -46,6 +46,14 @@ MonoBehaviour:
     m_Localized: "Skokowy obr\xF3t"
     m_Metadata:
       m_Items: []
+  - m_Id: 1974241774788608
+    m_Localized: Winieta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1983783615062016
+    m_Localized: "Czcionka Dla Dyslektyk\xF3w"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

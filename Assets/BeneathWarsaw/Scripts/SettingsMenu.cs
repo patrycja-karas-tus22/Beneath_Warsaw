@@ -10,7 +10,10 @@ public class SettingsMenu : MonoBehaviour
     public TMP_Dropdown movementTypeDropdown;
     public GameObject languagePanel;
     public GameObject movementPanel;
+    public GameObject accessibilityPanel;
     private Canvas canvas;
+    public FontSettings fontSettings;
+    public bool useDyslexicFont = false;
 
     private void Start()
     {
@@ -28,12 +31,22 @@ public class SettingsMenu : MonoBehaviour
     {
         languagePanel.SetActive(true);
         movementPanel.SetActive(false);
+        accessibilityPanel.SetActive(false);
 
 
     }
     public void MovementTab()
     {
         movementPanel.SetActive(true);
+        languagePanel.SetActive(false);
+        accessibilityPanel.SetActive(false);
+
+    }
+
+    public void AccessibilityTab()
+    {
+        accessibilityPanel.SetActive(true);
+        movementPanel.SetActive(false);
         languagePanel.SetActive(false);
 
     }
@@ -49,29 +62,32 @@ public class SettingsMenu : MonoBehaviour
         yield return LocalizationSettings.InitializationOperation;
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
     }
-    /* public void SetLanguage(int index)
-     {
-         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
-         RefreshDropdowns();
-     }
-     void RefreshDropdowns()
-     {
-         if (turnTypeDropdown != null)
-             turnTypeDropdown.RefreshShownValue();
-
-         if (movementTypeDropdown != null)
-             movementTypeDropdown.RefreshShownValue();
-     }
-     /* public void GeneralButtonPress()
-      {
-          Debug.Log("HIIII");
-      }
-
-      */
-
     void ToggleMenu()
     {
         canvas.enabled = !canvas.enabled;
     }
+        public void ToggleDyslexicFont(bool value)
+        {
+            useDyslexicFont = value;
+            UpdateAllTextElements();
+        }
+
+        private void UpdateAllTextElements()
+        {
+        TMP_Text[] allTexts = FindObjectsByType<TMP_Text>(
+     FindObjectsInactive.Include,
+     FindObjectsSortMode.None
+ );
+
+        TMP_FontAsset targetFont = useDyslexicFont ?
+                fontSettings.dyslexicFont :
+                fontSettings.defaultFont;
+
+            foreach (TMP_Text text in allTexts)
+            {
+                text.font = targetFont;
+            }
+        }
+    
 }
 
