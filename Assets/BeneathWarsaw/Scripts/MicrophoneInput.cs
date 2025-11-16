@@ -10,6 +10,7 @@ public class MicrophoneInput : MonoBehaviour
     private bool isInitialized;
     public static float MicLoudness;
 
+    public static float TotalLoudness => MicLoudness + GameNoise.EnvironmentNoise;
     void Update()
     {
         MicLoudness = LevelMax();
@@ -49,7 +50,7 @@ public class MicrophoneInput : MonoBehaviour
         Microphone.End(device);
     }
 
-    private float LevelMax()
+    private float LevelMax() //calculates loudness
     {
         float levelMax = 0;
         float[] waveData = new float[sampleWindow]; //creates an array to store audio samples

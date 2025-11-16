@@ -66,6 +66,6 @@ public class MovementSettings : MonoBehaviour
 
     public void VignetteOn()
     {
-        vignetteEnabled = !vignetteEnabled;
+        vignetteEnabled = !vignetteEnabled; //if true become false, if false become true
     }
 }
